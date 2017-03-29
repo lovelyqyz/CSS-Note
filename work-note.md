@@ -53,7 +53,7 @@ html{-webkit-text-size-adjust:none;}
   ```
 
 a.还需注意的就是列表元素首尾标签留空（或换行），不能够上一个标签组的结束标签与下一个标签组的其实标签连在一起，列表元素不能处在font-size:0的环境下
-   ![image](https://github.com/lovelyqyz/CSS-Note.git/images/标签留空.png)
+   ![image](https://github.com/lovelyqyz/CSS-Note/blob/master/images/标签留空.png)
 
 b. 最后一行排列不满的问题：列表（或文字）要两端对齐的前提就是内容必须超过一行，所以解决方法就是在列表（或文字段）的最后创建一个高度为0的宽度100%的透明的inline-block的标签层就可以了
 ```css
