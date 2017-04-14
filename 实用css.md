@@ -892,6 +892,7 @@ loadingImg();
     }
   ```
   2.文字模糊效果
+
     ```css
   p {
     color: transparent;
@@ -900,6 +901,7 @@ loadingImg();
   ```
   3.垂直居中
   IE9以上的浏览器支持
+
     ```css
   .center-horizontal {
      position: relative;
@@ -909,6 +911,7 @@ loadingImg();
   ```
   4.多重边框
   采用box-shadow来实现，
+
     ```css
   div {
     box-shadow: 0 0 0 6px rgba(0, 0, 0, 0.2), 0 0 0 12px rgba(0, 0, 0, 0.2), 0 0 0 18px rgba(0, 0, 0, 0.2), 0 0 0 24px rgba(0, 0, 0, 0.2);
@@ -918,6 +921,7 @@ loadingImg();
   }
   ```
   5.创建长宽等比固定的元素
+
   ```html
   <div style="width:100%;position:relative;padding-botton:20%;">
       <div style="position:absolute;left:0;top:0;right:0;bottom:0;background-color:yellow">
