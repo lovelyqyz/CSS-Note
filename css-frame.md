@@ -114,7 +114,7 @@ Api: [http://v3.bootcss.com/css/](http://v3.bootcss.com/css/)
 
     }
   ```
-  
+
 ## css预处理器 ##
      css预处理器：一种语言为css增加一些编程特性，进行web页面样式设计，再编译成css文件，以供项目使用。
 ### 1.Less ###
@@ -190,7 +190,6 @@ Sass 和 Less都是标准的CSS语法，默认Sass使用.sass扩展名，而Less
     border: borderWidth solid#F00;
     color: #F00;
   }
-
   .generic-error {
     padding: 20px;
     margin: 4px;

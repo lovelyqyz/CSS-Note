@@ -478,7 +478,7 @@ body {height:100%; }
 ```javaScript
   Var elemHeight=$(elemId).height();
   Var elemWidth=$(elemId).width();
-  Var leftPos=($(window).clientwidth()-$(elemId))/2;
+  Var leftPos=($(window).clientwidth()-elemWidth)/2;
   Var topPos =($(window).clientHeight()-elemHeight)/2+ $(document).scrollTop();
   $(elemId).css({left:leftPos,top:topPos});
 ```
@@ -852,3 +852,145 @@ loadingImg();
         <div class="bg3-inners"><!-- 这个div设有背景 --></div>
       </div>
     </div>
+
+## 前端冷知识##
+
+### js部分 ###
+    1.浏览器地址栏可直接执行js代码：
+      如：`javascript:alert('hello');`
+    2.把浏览器当做编辑器
+      地址栏上输入：`data:text/html,<html contenteditable>`
+    3.将页面变为可编辑状态
+      console面板下执行如下代码：`document.body.contentEditable = 'true'`
+    4.页面拥有id的元素会创建全局变量
+      如：`<div id="sample"></div>`
+      可以直接：console.log(sample);
+    5.加载CDN文件时，可省掉HTTP标识
+     CDN即从专门的服务器加载一些通用的JS和CSS文件
+    6.整数操作
+  `  |0 `和` ~~`将浮点数转换为整型且效率方面要比同类的parseInt,Math.round()要快;
+    如：`console.log((10/3)|0);
+         console.log(~~(10/3));`
+     结果都是 3
+    7.不声明第三个变量的值交换
+    ` var a = 1, b = 2; a = [b,b=a][0];     `
+    8.数字型调用toString()
+      1.toString()会报错，应改为1..toString()或(1).toString()
+    9.禁止别人通过iframe加载你的页面
+    `  if (window.location != window.parent.location)   window.parent.location = window.location;`
+
+## css部分 ##
+  1.鼠标消失
+  ```css
+    *{
+      cursor: none!important;
+    }
+  ```
+  2.文字模糊效果
+    ```css
+  p {
+    color: transparent;
+    text-shadow: #111 0 0 5px;
+  }
+  ```
+  3.垂直居中
+  IE9以上的浏览器支持
+    ```css
+  .center-horizontal {
+     position: relative;
+     left: 50%;
+     transform: translateX(-50%);
+  }
+  ```
+  4.多重边框
+  采用box-shadow来实现，
+    ```css
+  div {
+    box-shadow: 0 0 0 6px rgba(0, 0, 0, 0.2), 0 0 0 12px rgba(0, 0, 0, 0.2), 0 0 0 18px rgba(0, 0, 0, 0.2), 0 0 0 24px rgba(0, 0, 0, 0.2);
+    height: 200px;
+    margin: 50px auto;
+    width: 400px
+  }
+  ```
+  5.创建长宽等比固定的元素
+  ```html
+  <div style="width:100%;position:relative;padding-botton:20%;">
+      <div style="position:absolute;left:0;top:0;right:0;bottom:0;background-color:yellow">
+           this content will have a constant aspect ratio that varies based on the width.
+      </div>
+    </div>
+```
+
+6.BFC
+ 含义：Block  Formatting Context ,块级格式化上下文，
+ 作用：自适应两栏布局、清除内部浮动、防止垂直margin重叠(放在两个BFC里面)
+ 产生：根元素、float元素不为none、position为absolute或fixed, display为inline-block、table-cell、table-caption、flex、inline-flex、overflow不为visible;
+
+ 7.animation和transition的区别
+   同：都是随着时间改变的元素值
+   异：transition需要触发一个事件（hover或click事件等）才会随着时间改变其css属性；
+       animation在不需要触发任何事件的情况下也可以显示地随着时间变化
+
+8.标准模型和怪异模型
+  怪异模型：box-sizing:border-box; (content)
+  标准模型：box-sizing:content-box; (content + border + padding)
+
+9、写出5大浏览器的内核
+`*Trident: IE、Maxthon(遨游)、腾讯 、Theworld世界之窗、360浏览器
+*Gecko：： Mozilla Firefox 是开源的
+*Webkit : Safari、Chrome ， 是一个开源项目。
+*Presto : Opera ，Presto是由Opera Software开发的浏览器排版引擎。它也是世界上公认的渲染速度最快的引擎。
+*Blink  ：由Google和Opera Software开发的浏览器排版引擎，2013年4月发布。`
+
+10.浮动后的元素的display的值
+  无论是左浮动还是右浮动后都可以设置宽和高，display的值是block
+
+11.等比例缩放区块
+`padding-bottom`取值为百分比形式时，百分比的基数是其所在元素的父元素的`宽度`而不是`高度`（与padding-left和padding-right一样）;
+ 示例：实现窗体宽度缩放时，让宽度自适应的同时，保持高度与宽度的比例不变，实现方法：利用padding-bottom，如元素宽度为20%，让元素的高度始终是其宽度的一半，则padding-bottom:10%;
+ ```css
+ .productsWrap span{
+   display: inline-block;
+   width: 20%;height: 0;padding-bottom: 10%;
+   background-color: #B4B8E4;
+   text-align: center;
+   color: white;
+}
+ ```
+ ```html
+ <div class="productsWrap">
+   <span>block part</span>
+   <span>block part</span>
+   <span>block part</span>
+   <span>block part</span>
+</div>
+ ```
+ 12. contenteditable属性
+  兼容各个浏览器，作用是让元素可编辑状态;
+ ```html
+ <div contenteditable="true">可以编辑里面的内容</div>
+ ```
+
+ 13.Javascript的垃圾回收机制及原理
+  使用计数垃圾收集、循环引用
+
+14.实现品字布局
+```css
+*{margin:0;padding: 0;}
+ .pinWrap .headWrap{margin:0 auto;background-color: #505080;}
+ .pinWrap .headWrap, .pinWrap .left, .pinWrap .right{width: 100px;height: 100px;}
+ .pinWrap .left, .pinWrap .right{display: inline-block;}
+ .pinWrap .left{margin-left: -200px;background-color: #7272A7;}
+ .pinWrap .right{margin-left: 50%;background-color: #B4B8E4}
+```
+
+```html
+<div class="pinWrap">
+  <div class="headWrap"></div>
+  <div class="bottWrap">
+     <p class="right"></p>
+     <p class="left"></p>
+  </div>
+</div>
+<!-- pinWrap end -->
+```
