@@ -544,14 +544,16 @@ FF：DOMMouseScroll滚动值获取：event.detail
 受到overflow的影响或可加上table:border:1px solid white;进行解决
 
 ##  15.pc端网页使用字体分析： ##  
-（1）推荐常用的英文字体是：`arial`。 视觉设计的专业人士可能会认为在Windows中使用`tahoma`、在Mac中使用`helvetica`更好，比如淘宝的默认字体样式是font: 12px/1 Tahoma, Helvetica, Arial, "5b8b4f53", sans-serif;（注：“5b8b4f53”是宋体的意思，这是unicode的编码方式，不用 SimSun, 是因为 Firefox 的某些版本和 Opera 不支持 SimSun 的写法。使用宋体时，字号常用是12px和14px;12px/1表示默认的行高是默认字体的1倍，即行高是12*1=12px）
-中文最好用`unicode`表示，比如使用宋体是`{font-family:\5b8b\4f53;}`，使用微软雅黑是`{font-family:\5fae\8f6f\96c5\9ed1;}`，这样的好处是避免编码问题，同时能得到所有的主流浏览器的支持。使用正确的字体种类写法，避免使用引号，这样可以缩小CSS的大小。
-`微软雅黑   Microsoft YaHei   \5FAE\8F6F\96C5\9ED1`
-常用的行高：`1.2,1:1.5和1:2` </br>
-（2） 2.1Mac & Windows公有可用英文及数字字体有：`Arial, Arial Black, Comic Sans MS, Courier New, Georgia, Impact Times New Roman, Trebuchet MS,Verdana`
-Windows下可用中文字体有`宋体（中易宋体），新宋体，仿宋体，黑体，楷体，微软雅黑`（部分系统适用，Vista以上系统，xp系统没有）。
-Mac下可用中文字体有宋体`（华文宋体），仿宋体（华文仿宋），黑体（华文黑体），华文细黑，华文楷体`。（Mac默认下Safari使用`华文宋体`，chrome默认使用`华文黑体`）
-（说明：windows下中文字体效果与Mac下字体没有共同字体，故效果差异蛮大的。）
+2.0 推荐常用的英文字体是：`arial`。 视觉设计的专业人士可能会认为在Windows中使用`tahoma`、在Mac中使用`helvetica`更好，比如淘宝的默认字体样式是font: 12px/1 Tahoma, Helvetica, Arial, "5b8b4f53", sans-serif;（注：“5b8b4f53”是宋体的意思，这是unicode的编码方式，不用 SimSun, 是因为 Firefox 的某些版本和 Opera 不支持 SimSun 的写法。使用宋体时，字号常用是12px和14px;12px/1表示默认的行高是默认字体的1倍，即行高是12*1=12px）<br/>
+中文最好用`unicode`表示，比如使用宋体是`{font-family:\5b8b\4f53;}`，使用微软雅黑是`{font-family:\5fae\8f6f\96c5\9ed1;}`，<br/>
+这样的好处是避免编码问题，同时能得到所有的主流浏览器的支持。使用正确的字体种类写法，避免使用引号，这样可以缩小CSS的大小。<br/>
+`微软雅黑   Microsoft YaHei   \5FAE\8F6F\96C5\9ED1`<br/>
+常用的行高：`1.2,1:1.5和1:2` <br/>
+
+2.1 Mac & Windows公有可用英文及数字字体有：`Arial, Arial Black, Comic Sans MS, Courier New, Georgia, Impact Times New Roman, Trebuchet MS,Verdana`<br/>
+Windows下可用中文字体有`宋体（中易宋体），新宋体，仿宋体，黑体，楷体，微软雅黑`（部分系统适用，Vista以上系统，xp系统没有）。<br/>
+Mac下可用中文字体有宋体`（华文宋体），仿宋体（华文仿宋），黑体（华文黑体），华文细黑，华文楷体`。（Mac默认下Safari使用`华文宋体`，chrome默认使用`华文黑体`）<br/>
+（说明：windows下中文字体效果与Mac下字体没有共同字体，故效果差异蛮大的。）<br/>
 
 2.2. 对于微软雅黑，以操作系统计算，覆盖率仅为不到30%，未安装该字体的用户可使用宋体或黑体替代，有必要的话可考虑指定替代字体。
 
@@ -559,7 +561,7 @@ Mac下可用中文字体有宋体`（华文宋体），仿宋体（华文仿宋�
 
 2.4. 正文`12px`字体建议使用宋体。`12-17px`宋体比微软雅黑要清晰
 
-##  16.hack注释的写法：##  
+##  16.hack注释的写法： ###  
 如
 `<!--[if lte IE 7]>
 <style type="text/css">?
@@ -856,7 +858,7 @@ loadingImg();
       </div>
     </div>
 
-## 前端冷知识##
+## 前端冷知识 ##
 
 ### js部分 ###
     1.浏览器地址栏可直接执行js代码：
@@ -882,7 +884,7 @@ loadingImg();
     9.禁止别人通过iframe加载你的页面
     `  if (window.location != window.parent.location)   window.parent.location = window.location;`
 
-## css部分 ##
+## css部分  ##
   1.鼠标消失
   ```css
     *{
