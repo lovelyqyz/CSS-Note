@@ -899,8 +899,9 @@ loadingImg();
     text-shadow: #111 0 0 5px;
   }
   ```
+
   3.垂直居中
-  IE9以上的浏览器支持
+   IE9以上的浏览器支持
 
     ```css
   .center-horizontal {
