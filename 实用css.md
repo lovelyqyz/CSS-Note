@@ -1004,3 +1004,21 @@ loadingImg();
 </div>
 <!-- pinWrap end -->
 ```
+
+15. image的srcset属性：允许作者根据不同分辨率或不同的视窗尺寸选择多个不同分辨率图像;
+
+```html
+  /*before*/
+  <img src="small.jpg" srcset="small.jpg 640w 1x, small-hd.jpg 640w 2x, large.jpg 1x, large-hd.jpg 2x">
+  /*走2倍尺寸路线*/
+  <img src="small.jpg" srcset="small.jpg 640w 1x, medium.jpg 640w 2x, medium.jpg 1x,large.jpg 2x">
+```
+/*after*/
+sizes = "[media query] [length],[media query][length]… etc"
+如：`size = "(max-width: 360px) 340px, 128px"`表示当视区宽度不大于360px时，图片的宽度限制为340px,其他情况时使用128px;
+
+`size = "(max-width:360px) calc(100vw - 20px), 128px "`
+
+
+svg应用
+  提供嵌套转换、裁剪路径、A
