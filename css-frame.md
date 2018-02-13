@@ -240,3 +240,18 @@ Sass 和 Less都是标准的CSS语法，默认Sass使用.sass扩展名，而Less
     css文件的导入，会出现多次http请求，但css预编译器导入只是语义上包含多个文件，最终结果是一个单一css文件.如：@ import"reset.css";
 （7）函数：
   一般会内置一些颜色处理函数来对颜色值进行处理
+  
+  二、less 与 sass 的区别
+  less在如下情形下不能进行覆盖，
+  ```css
+   .average(@x, @y){
+  	@average:((@x + @y)/2);
+   }
+   div{
+	  .average(10px, 20px);
+   	padding:@average;
+
+  	.average(15px, 25px);  
+     	padding:@average;  //average覆盖不了
+    }
+  ```
